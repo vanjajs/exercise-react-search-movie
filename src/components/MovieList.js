@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row } from 'reactstrap';
 
 import Movie from './Movie';
 
@@ -11,9 +12,9 @@ const movieList = (props) => {
   }
 
   return (
-    <div className="card-columns">
+    <Row>
       {movies}
-    </div>
+    </Row>
   )
 }
 

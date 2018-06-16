@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 
+import { Nav, NavItem, NavLink, Button, Form, FormGroup, Input } from 'reactstrap';
+
 import MovieList from './components/MovieList';
 import MovieInfo from './components/MovieInfo';
 
@@ -62,14 +64,18 @@ class App extends Component {
 
     return (
       <div className="App">
-        <nav className="navbar navbar-light bg-light">
-          <a className="navbar-brand">Movies</a>
+        <Nav className="navbar navbar-light bg-light">
+          <NavItem>
+            Movie App
+          </NavItem>
           <div>Results: {this.state.total}</div>
-          <form className="form-inline" onSubmit={this.searhMovie}>
-            <input className="form-control mr-sm-2" type="search" name="title" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </nav>
+          <Form inline onSubmit={this.searhMovie}>
+            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+              <Input type="search" name="title" placeholder="Search" />
+            </FormGroup>
+            <Button color="success">Search</Button>
+          </Form>
+        </Nav>  
 
         <MovieList movies={this.state.movies} clicked={this.showInfoHandler} />
 
