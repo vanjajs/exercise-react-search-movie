@@ -93,8 +93,7 @@ class App extends Component {
       nextLink = <Button color="primary" size="lg" block onClick={() => this.loadMovies(this.state.searchTerm)}>Load More</Button>
     }
 
-    // const spinner = this.state.loading? <Spinner /> : null;
-    const spinner = <Spinner />;
+    const spinner = this.state.loading? <Spinner /> : null;
 
     return (
       <div className="App">
